@@ -1,0 +1,60 @@
+16:23:03 **** Incremental Build of configuration Debug for project FanController ****
+make all 
+Building file: ../adc.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"adc.d" -MT"adc.o" -c -o "adc.o" "../adc.c"
+Finished building: ../adc.c
+ 
+Building file: ../dc_motor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"dc_motor.d" -MT"dc_motor.o" -c -o "dc_motor.o" "../dc_motor.c"
+Finished building: ../dc_motor.c
+ 
+Building file: ../lm35_sensor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lm35_sensor.d" -MT"lm35_sensor.o" -c -o "lm35_sensor.o" "../lm35_sensor.c"
+Finished building: ../lm35_sensor.c
+ 
+Building file: ../project.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"project.d" -MT"project.o" -c -o "project.o" "../project.c"
+../project.c: In function 'main':
+../project.c:34: warning: implicit declaration of function 'LCD_init'
+../project.c:39: warning: implicit declaration of function 'LCD_displayStringRowColumn'
+../project.c:61: warning: implicit declaration of function 'LCD_displayCharacter'
+../project.c:80: warning: implicit declaration of function 'LCD_moveCursor'
+../project.c:83: warning: implicit declaration of function 'LCD_integerToString'
+Finished building: ../project.c
+ 
+Building file: ../pwm.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"pwm.d" -MT"pwm.o" -c -o "pwm.o" "../pwm.c"
+Finished building: ../pwm.c
+ 
+Building target: FanController.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,FanController.map -mmcu=atmega16 -o "FanController.elf"  ./adc.o ./dc_motor.o ./gpio.o ./lcd.o ./lm35_sensor.o ./project.o ./pwm.o   
+Finished building target: FanController.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S FanController.elf  >"FanController.lss"
+Finished building: FanController.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 FanController.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9238 bytes (56.4% Full)
+(.text + .data + .bootloader)
+
+Data:        292 bytes (28.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+16:23:07 Build Finished. 0 errors, 5 warnings. (took 3s.972ms)
+
